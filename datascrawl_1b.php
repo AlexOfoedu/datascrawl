@@ -18,6 +18,8 @@ $numOfLoops = $loops;
 function randomNameGen($loops, $chars)
 {
 
+$output = "";
+
     for ($i=0;$i<$loops;$i++)
     {
        $name = "";
@@ -108,17 +110,20 @@ function randomNameGen($loops, $chars)
                 $name .= "z";
                 break;
             default:
-                $name .= "a"
+                $name .= "a";
                 break;
             }
 
         }
        
+    $output .= "".$name."<br>";
     }
+
+return $output;
 
 }
 
-randomNameGen();
+echo randomNameGen(10, 10);
 
 //scrawl(10);
 
