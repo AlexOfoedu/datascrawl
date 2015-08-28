@@ -26,7 +26,7 @@ $output = "";
 
         for ($j=0;$j<$chars;$j++)
         {
-            $seed = mt_rand(0, $chars);            
+            $seed = mt_rand(0, 25);
 
             switch ($seed)
             {
@@ -116,14 +116,45 @@ $output = "";
 
         }
        
-    $output .= "".$name."<br>";
+    $output .= "".$name;
     }
 
 return $output;
 
 }
 
-echo randomNameGen(10, 10);
+function emailGen($loops, $ataddress)
+{
+    $output = "";
+
+    for ($i=0;$i<$loops;$i++)
+    {
+        $email = "".randomNameGen(1, mt_rand(2, 20)).".".randomNameGen(1, mt_rand(2, 20));
+        switch ($ataddress)
+        {
+            case 0:
+                $email .= "@test.com";
+                break;
+            case 1:
+                $email .= "@example.com";
+                break;
+            case 2:
+                $email .= "@myemail.net";
+                break;
+            case 3:
+                $email .= "@mailbyte.net";
+                break;
+            default:
+                $email .= "@test.com";
+        }
+
+        $output = "".$email;
+    }
+
+    return $output;
+}
+
+echo emailGen(10, mt_rand(0, 3));
 
 //scrawl(10);
 
